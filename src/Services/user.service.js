@@ -5,12 +5,7 @@ const userService = {
     getAll: () => axiosService.get(urls.users),
     getById: (id) => axiosService(`${urls.users}/${id}`)
 }
-const postService = {
-    getAll: () => axiosService.get(urls.posts),
-    getById: (id) => axiosService(`${urls.posts}/${id}`)
-}
 
 export {
-    userService,
-    postService
+    userService
 }

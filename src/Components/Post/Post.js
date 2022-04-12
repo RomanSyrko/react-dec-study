@@ -1,10 +1,9 @@
-import React from 'react';
-
-const Post = ({post}) => {
-    const {id, title, body} = post;
+const Post = ({post: {id, title, body}}) => {
     return (
         <div>
-            {id} -- {title} -- {body}
+            <div>ID: {id}</div>
+            <div>Title: {title}</div>
+            <p>{body}</p>
         </div>
     );
 };

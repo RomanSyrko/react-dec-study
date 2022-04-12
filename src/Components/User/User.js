@@ -1,10 +1,17 @@
 import React from 'react';
 
-const User = ({user}) => {
-    const {id, name, username} = user;
+const User = ({user, setUserDetails, trigger}) => {
+    const {id, name} = user;
+    const click = () => {
+        setUserDetails(user)
+        trigger()
+    }
+    
     return (
-        <div>
-            {id} -- {name} -- {username}
+        <div className={'text'}>
+            {id}) {name}
+            <button onClick={() => click()}>Get Details</button>
+
         </div>
     );
 };

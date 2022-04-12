@@ -2,15 +2,18 @@ import React, {useEffect, useState} from 'react';
 import {userService} from "../../Services";
 import {User} from "../User";
 
-const Users = () => {
+const Users = ({setUserDetails, trigger}) => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
         userService.getAll().then(({data}) => setUsers(data))
     }, [])
+
     return (
         <div>
-            {users.map(user => <User key={user.id} user={user}/>)}
+            <h2>Users:</h2>
+                {users.map(user => <User key={user.id} user={user} setUserDetails={setUserDetails} trigger={trigger}/>)}
+
         </div>
     );
 };
