@@ -14,8 +14,6 @@ const commentService = {
     getById: (id) => axiosService(`${urls.comments}/${id}`)
 }
 
-
-
 export {
     userService,
     postService,
