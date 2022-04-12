@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {userService} from "../Services";
-import Comment from "../Comment/Comment";
+import {Comment} from "../Comment/Comment";
 
 const Comments = () => {
 

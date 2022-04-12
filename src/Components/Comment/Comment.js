@@ -9,4 +9,4 @@ const Comment = ({comment}) => {
     );
 };
 
-export default Comment;
+export {Comment};
