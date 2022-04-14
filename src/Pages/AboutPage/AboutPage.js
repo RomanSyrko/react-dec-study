@@ -1,7 +1,9 @@
+import css from "./About.module.css";
+
 const AboutPage = () => {
     return (
         <div>
-            AboutPage
+            <div className={css.center}>About</div>
         </div>
     );
 };

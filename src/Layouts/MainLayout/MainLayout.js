@@ -1,14 +1,15 @@
 import css from './MainLayout.module.css'
-import {Outlet, Link} from "react-router-dom";
+import {Outlet, NavLink} from "react-router-dom";
 
 const MainLayout = () => {
     return (
         <div>
             <div className={css.header}>
-                <Link to="/home">Home</Link>
-                <Link to="/users">Users</Link>
-                <Link to="/posts">Posts</Link>
-                <Link to="/about">About</Link>
+                <NavLink to="/home">Home</NavLink>
+                <NavLink to="/users">Users</NavLink>
+                <NavLink to="/posts">Posts</NavLink>
+                <NavLink to="/comments">Comments</NavLink>
+                <NavLink to="/about">About</NavLink>
             </div>
             <hr/>
             <Outlet/>
