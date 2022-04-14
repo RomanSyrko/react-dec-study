@@ -6,11 +6,8 @@ import {UserDetails} from "../../Components";
 
 
 const SingleUserPage = () => {
-
-
     const [user, setUser] = useState([]);
     const {id} = useParams();
-
     useEffect(()=>{
         userService.getById(id).then(({data}) => setUser(data))
     },[id])
