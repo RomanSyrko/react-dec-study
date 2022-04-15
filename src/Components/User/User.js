@@ -1,4 +1,5 @@
-import {Link} from "react-router-dom";
+import {Button} from "../Button/Button";
+import css from './User.module.css'
 
 const User = ({user}) => {
 
@@ -6,10 +7,13 @@ const User = ({user}) => {
 
     return (
         <div>
-            <h2>ID: {id}</h2>
-            <h3>Name: {name}</h3>
-            <Link to={id.toString()} state={user}>Get Details</Link>
-            <hr/>
+            <div className={css.box}>
+                <div className={css.h103}>
+                    <h2>ID: {id}</h2>
+                    <h3>Name: {name}</h3>
+                </div>
+                <div className={css.right}><Button to={`${id}`} state={user}>Get Details</Button></div>
+            </div>
         </div>
     );
 };

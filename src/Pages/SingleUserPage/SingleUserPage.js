@@ -3,19 +3,22 @@ import {useEffect, useState} from "react";
 
 import {userService} from "../../Services";
 import {UserDetails} from "../../Components";
+import css from './SingleUserPage.module.css'
 
 
 const SingleUserPage = () => {
     const [user, setUser] = useState([]);
-    const {id} = useParams();
-    useEffect(()=>{
-        userService.getById(id).then(({data}) => setUser(data))
-    },[id])
+    const {userID} = useParams();
+    useEffect(() => {
+        userService.getById(userID).then(({data}) => setUser(data))
+    }, [userID])
 
     return (
-        <div>
+
+        <div className={css.box}>
             {user && <UserDetails user={user}/>}
         </div>
+
     );
 };
 

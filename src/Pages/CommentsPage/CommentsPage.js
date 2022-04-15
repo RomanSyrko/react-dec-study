@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 
 import {Comment} from "../../Components";
 import {commentService} from "../../Services";
+import css from './CommentsPage.module.css'
 
 const CommentsPage = () => {
     const [comment, setComment] = useState([]);
@@ -12,7 +13,9 @@ const CommentsPage = () => {
 
     return (
         <div>
-            {comment.map(comment => <Comment key={comment.id} comment={comment}/>)}
+            <div className={css.wrap}>
+                {comment.map(comment => <Comment key={comment.id} comment={comment}/>)}
+            </div>
         </div>
     );
 };
