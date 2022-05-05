@@ -2,10 +2,10 @@ body {
     background-color: #e0e5eb;
 }
 
-.box {
+.commentBox {
     margin: 30px;
     box-sizing: border-box;
-    width: 800px;
+    width: 90%;
     height: 250px;
     padding: 20px;
     box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);

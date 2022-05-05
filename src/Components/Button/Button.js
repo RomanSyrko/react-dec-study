@@ -7,6 +7,7 @@ const Button = ({to, state, children, ...arg}) => {
         <Link to={to} state={state}>
             <button className={css.button} {...arg}>{children}</button>
         </Link>
+
     );
 };
 

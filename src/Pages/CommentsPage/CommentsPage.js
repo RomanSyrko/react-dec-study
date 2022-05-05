@@ -13,7 +13,7 @@ const CommentsPage = () => {
 
     return (
         <div>
-            <div className={css.wrap}>
+            <div className={css.commentsWrap}>
                 {comment.map(comment => <Comment key={comment.id} comment={comment}/>)}
             </div>
         </div>

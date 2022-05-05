@@ -1,6 +1,6 @@
-.wrap{
+.commentsWrap{
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
     justify-content: center;
+    width: 70%;
 }
