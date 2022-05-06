@@ -1,9 +1,20 @@
+import {Navigate, Route, Routes} from "react-router-dom";
+
+import {MainLayout} from "./layout";
+import {CarPage, LoginPage, RegisterPage} from "./pages";
 
 function App() {
-  return (
-    <div>
-    </div>
-  );
+    return (
+        <Routes>
+            <Route path={'/'} element={<MainLayout/>}>
+                <Route index element={<Navigate to={'cars'}/>}/>
+                <Route path={'cars'} element={<CarPage/>}/>
+                <Route path={'login'} element={<LoginPage/>}/>
+                <Route path={'register'} element={<RegisterPage/>}/>
+
+            </Route>
+        </Routes>
+    );
 }
 
 export default App;
