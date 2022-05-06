@@ -1,18 +1,34 @@
 import {useForm} from "react-hook-form";
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
+import {useDispatch} from "react-redux";
+
+import {userService} from "../../services";
+import {authActions} from "../../redux";
 
 
 const AuthForm = () => {
     const {register, handleSubmit} = useForm();
     const [isLogin, setIsLogin] = useState(null);
-    const {pathname} = useLocation();
+    const {pathname, state} = useLocation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         pathname === '/register' ? setIsLogin(false) : setIsLogin(true);
     }, [pathname]);
 
-    const submit = (user) => {
+    const submit = async (user) => {
+        try {
+            if (!isLogin) {
+                await userService.create(user)
+                navigate('/login')
+            } else {
+                await dispatch(authActions.login({user}))
+                navigate(state.pathname, {replace: true})
+            }
+        } catch (e) {
+        }
     };
     return (
         <form onSubmit={handleSubmit(submit)}>

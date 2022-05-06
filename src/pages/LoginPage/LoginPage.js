@@ -1,4 +1,4 @@
-import {AuthForm} from "../../components/AuthForm/AuthForm";
+import {AuthForm} from "../../components";
 import {Link} from "react-router-dom";
 
 const LoginPage = () => {
