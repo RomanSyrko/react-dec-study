@@ -8,7 +8,7 @@ const initialState = {
 };
 const login = createAsyncThunk(
     'login',
-    async (user) => {
+    async ({user}) => {
         const {data} = await authService.getTokens(user);
         return data;
     }
